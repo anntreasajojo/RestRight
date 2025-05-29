@@ -5,15 +5,193 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#222831"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/restRightTitle"
+        android:text="Rest Right"
+        android:textStyle="bold"
+        android:textSize="42sp"
+        android:layout_margin="16dp"
+        android:textColor="#DFD0B8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.073" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:id="@+id/skillLevelCardView"
+        app:cardElevation="6dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#393E46"
+        app:layout_constraintTop_toBottomOf="@id/restRightTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/skillLevelTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Select Skill Level"
+                android:textColor="#948979"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.16" />
+
+
+            <Button
+                android:id="@+id/skillLevelBeginnerButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#948979"
+                android:text="Beginner"
+                app:layout_constraintTop_toBottomOf="@id/skillLevelTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/skillLevelIntermediateButton" />
+
+            <Button
+                android:id="@+id/skillLevelIntermediateButton"
+                android:layout_width="130dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#948979"
+                android:text="Intermediate"
+                app:layout_constraintEnd_toStartOf="@id/skillLevelAdvancedButton"
+                app:layout_constraintStart_toEndOf="@id/skillLevelBeginnerButton"
+                app:layout_constraintTop_toBottomOf="@id/skillLevelTextView" />
+
+            <Button
+                android:id="@+id/skillLevelAdvancedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#948979"
+                android:text="Advanced"
+                app:layout_constraintTop_toBottomOf="@id/skillLevelTextView"
+                app:layout_constraintStart_toEndOf="@id/skillLevelIntermediateButton"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:id="@+id/exerciseGoalCardView"
+        app:cardElevation="6dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#393E46"
+        app:layout_constraintTop_toBottomOf="@id/skillLevelCardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/exerciseGoalTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Select Exercise Goal"
+                android:textColor="#948979"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.16" />
+
+
+            <Button
+                android:id="@+id/strengthGoalButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#948979"
+                android:text="Strength"
+                app:layout_constraintTop_toBottomOf="@id/exerciseGoalTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/muscleMassGoalButton" />
+
+            <Button
+                android:id="@+id/muscleMassGoalButton"
+                android:layout_width="143dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#948979"
+                android:text="Muscle Mass"
+                app:layout_constraintEnd_toStartOf="@id/enduranceGoalButton"
+                app:layout_constraintStart_toEndOf="@id/strengthGoalButton"
+                app:layout_constraintTop_toBottomOf="@id/exerciseGoalTextView" />
+
+            <Button
+                android:id="@+id/enduranceGoalButton"
+                android:layout_width="117dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#948979"
+                android:text="Endurance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/muscleMassGoalButton"
+                app:layout_constraintTop_toBottomOf="@id/exerciseGoalTextView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/exerciseGoalCardView"
+        android:id="@+id/spacer"
+        >
+
+    </Space>
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#DFD0B8"
+        android:text="Calculate Rest"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spacer"
+        />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

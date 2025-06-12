@@ -4,6 +4,7 @@ package com.example.restright;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -53,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
         binding.skillLevelBeginnerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //check if a skill option is already selected
+
+                //if clicked skill button variable  is already assigned (aka not empty) then let user know they can only make one option
+                if(!clickedSkillButton.isEmpty()){
+                    showLimitToast();
+                    return;
+                }
                 clickedSkillButton = "Beginner";
                 highlightSelectedOption("Beginner");
             }
@@ -62,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
         binding.skillLevelIntermediateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //check if an skill option is already selected
+                if(!clickedSkillButton.isEmpty()){
+                    showLimitToast();
+                    return;
+                }
                 clickedSkillButton = "Intermediate";
                 highlightSelectedOption("Intermediate");
             }
@@ -71,6 +84,11 @@ public class MainActivity extends AppCompatActivity {
         binding.skillLevelAdvancedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //check if an skill option is already selected
+                if(!clickedSkillButton.isEmpty()){
+                    showLimitToast();
+                    return;
+                }
                 clickedSkillButton = "Advanced";
                 highlightSelectedOption("Advanced");
             }
@@ -83,6 +101,11 @@ public class MainActivity extends AppCompatActivity {
         binding.strengthGoalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //check if an exercise goal is already selected
+                if(!clickedExerciseGoalButton.isEmpty()){
+                    showLimitToast();
+                    return;
+                }
                 clickedExerciseGoalButton = "Strength";
                 highlightSelectedOption("Strength");
             }
@@ -92,6 +115,11 @@ public class MainActivity extends AppCompatActivity {
         binding.muscleMassGoalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //check if an exercise goal is already selected
+                if(!clickedExerciseGoalButton.isEmpty()){
+                    showLimitToast();
+                    return;
+                }
                 clickedExerciseGoalButton = "Muscle Mass";
                 highlightSelectedOption("Muscle Mass");
 
@@ -102,11 +130,17 @@ public class MainActivity extends AppCompatActivity {
         binding.enduranceGoalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //check if an exercise goal is already selected
+                if(!clickedExerciseGoalButton.isEmpty()){
+                    showLimitToast();
+                    return;
+                }
                 clickedExerciseGoalButton = "Endurance";
                 highlightSelectedOption("Endurance");
             }
         });
 
+        //user clicks calculate button
         binding.calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,6 +148,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //user clicks reset button
         binding.resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -238,6 +274,11 @@ public class MainActivity extends AppCompatActivity {
             binding.enduranceGoalButton.setTextColor(Color.parseColor("#948979"));
         }
 
+    }
+
+    private void showLimitToast() {
+        Toast toast = Toast.makeText(this, "One choice only! Reset to change.", Toast.LENGTH_SHORT);
+        toast.show();
     }
 
 

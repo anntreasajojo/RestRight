@@ -194,16 +194,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/calculatedTimeTextView"
+        android:hint="____ seconds"
+        android:textColorHint="#DFD0B8"
         android:text=""
         app:layout_constraintTop_toBottomOf="@id/calculateButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"
-        android:textSize="35sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="#DFD0B8"
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resetButton"
+        android:text="Reset"
+        android:backgroundTint="#948979"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        />
 
 
 

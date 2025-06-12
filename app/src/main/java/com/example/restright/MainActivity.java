@@ -28,46 +28,6 @@ public class MainActivity extends AppCompatActivity {
         getInformationFromDisplay();
     }
 
-    private void calculateRest(String skillLevel, String exerciseGoal) {
-        //key notes
-        //beginner + strength = 300 seconds
-        //beginner + muscle mass = 90 seconds
-        //beginner + endurance = 60 seconds
-
-        //intermediate + strength = 180 seconds
-        //intermediate + muscle mass = 60 seconds
-        //intermediate + endurance = 40 seconds
-
-        //advanced + strength = 120 seconds
-        //advanced + muscle mass = 30 seconds
-        //advanced + endurance = 20 seconds
-
-        if(skillLevel.equalsIgnoreCase("Beginner") && exerciseGoal.equalsIgnoreCase("Strength")){
-            binding.calculatedTimeTextView.setText("300 seconds");
-        }else if(skillLevel.equalsIgnoreCase("Beginner") && exerciseGoal.equalsIgnoreCase("Muscle Mass")){
-            binding.calculatedTimeTextView.setText("90 seconds");
-        }else if(skillLevel.equalsIgnoreCase("Beginner") && exerciseGoal.equalsIgnoreCase("Endurance")){
-            binding.calculatedTimeTextView.setText("60 seconds");
-        }
-
-        if(skillLevel.equalsIgnoreCase("Intermediate") && exerciseGoal.equalsIgnoreCase("Strength")){
-            binding.calculatedTimeTextView.setText("180 seconds");
-        }else if(skillLevel.equalsIgnoreCase("Intermediate") && exerciseGoal.equalsIgnoreCase("Muscle Mass")){
-            binding.calculatedTimeTextView.setText("60 seconds");
-        }else if(skillLevel.equalsIgnoreCase("Intermediate") && exerciseGoal.equalsIgnoreCase("Endurance")){
-            binding.calculatedTimeTextView.setText("40 seconds");
-        }
-
-        if(skillLevel.equalsIgnoreCase("Advanced") && exerciseGoal.equalsIgnoreCase("Strength")){
-            binding.calculatedTimeTextView.setText("120 seconds");
-        }else if(skillLevel.equalsIgnoreCase("Advanced") && exerciseGoal.equalsIgnoreCase("Muscle Mass")){
-            binding.calculatedTimeTextView.setText("30 seconds");
-        }else if(skillLevel.equalsIgnoreCase("Advanced") && exerciseGoal.equalsIgnoreCase("Endurance")){
-            binding.calculatedTimeTextView.setText("20 seconds");
-        }
-
-    }
-
     private void getInformationFromDisplay() {
         //must select a skill type
         //must select a exercise goal
@@ -154,9 +114,94 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetOptions();
+            }
+        });
 
+    }
 
+    private void calculateRest(String skillLevel, String exerciseGoal) {
+        //key notes
+        //beginner + strength = 300 seconds
+        //beginner + muscle mass = 90 seconds
+        //beginner + endurance = 60 seconds
 
+        //intermediate + strength = 180 seconds
+        //intermediate + muscle mass = 60 seconds
+        //intermediate + endurance = 40 seconds
+
+        //advanced + strength = 120 seconds
+        //advanced + muscle mass = 30 seconds
+        //advanced + endurance = 20 seconds
+
+        if(skillLevel.equalsIgnoreCase("Beginner") && exerciseGoal.equalsIgnoreCase("Strength")){
+            binding.calculatedTimeTextView.setText("300 seconds");
+        }else if(skillLevel.equalsIgnoreCase("Beginner") && exerciseGoal.equalsIgnoreCase("Muscle Mass")){
+            binding.calculatedTimeTextView.setText("90 seconds");
+        }else if(skillLevel.equalsIgnoreCase("Beginner") && exerciseGoal.equalsIgnoreCase("Endurance")){
+            binding.calculatedTimeTextView.setText("60 seconds");
+        }
+
+        if(skillLevel.equalsIgnoreCase("Intermediate") && exerciseGoal.equalsIgnoreCase("Strength")){
+            binding.calculatedTimeTextView.setText("180 seconds");
+        }else if(skillLevel.equalsIgnoreCase("Intermediate") && exerciseGoal.equalsIgnoreCase("Muscle Mass")){
+            binding.calculatedTimeTextView.setText("60 seconds");
+        }else if(skillLevel.equalsIgnoreCase("Intermediate") && exerciseGoal.equalsIgnoreCase("Endurance")){
+            binding.calculatedTimeTextView.setText("40 seconds");
+        }
+
+        if(skillLevel.equalsIgnoreCase("Advanced") && exerciseGoal.equalsIgnoreCase("Strength")){
+            binding.calculatedTimeTextView.setText("120 seconds");
+        }else if(skillLevel.equalsIgnoreCase("Advanced") && exerciseGoal.equalsIgnoreCase("Muscle Mass")){
+            binding.calculatedTimeTextView.setText("30 seconds");
+        }else if(skillLevel.equalsIgnoreCase("Advanced") && exerciseGoal.equalsIgnoreCase("Endurance")){
+            binding.calculatedTimeTextView.setText("20 seconds");
+        }
+
+    }
+
+    private void resetOptions() {
+        if(clickedSkillButton.equalsIgnoreCase("Beginner")){
+            binding.skillLevelBeginnerButton.setBackgroundColor(Color.parseColor("#948979"));
+            binding.skillLevelBeginnerButton.setTextColor(Color.parseColor("#FFFFFF"));
+        }
+
+        if(clickedSkillButton.equalsIgnoreCase("Intermediate")){
+            binding.skillLevelIntermediateButton.setBackgroundColor(Color.parseColor("#948979"));
+            binding.skillLevelIntermediateButton.setTextColor(Color.parseColor("#FFFFFF"));
+
+        }
+
+        if(clickedSkillButton.equalsIgnoreCase("Advanced")){
+            binding.skillLevelAdvancedButton.setBackgroundColor(Color.parseColor("#948979"));
+            binding.skillLevelAdvancedButton.setTextColor(Color.parseColor("#FFFFFF"));
+
+        }
+
+        if(clickedExerciseGoalButton.equalsIgnoreCase("Strength")){
+            binding.strengthGoalButton.setBackgroundColor(Color.parseColor("#948979"));
+            binding.strengthGoalButton.setTextColor(Color.parseColor("#FFFFFF"));
+        }
+
+        if(clickedExerciseGoalButton.equalsIgnoreCase("Muscle Mass")){
+            binding.muscleMassGoalButton.setBackgroundColor(Color.parseColor("#948979"));
+            binding.muscleMassGoalButton.setTextColor(Color.parseColor("#FFFFFF"));
+        }
+
+        if(clickedExerciseGoalButton.equalsIgnoreCase("Endurance")){
+            binding.enduranceGoalButton.setBackgroundColor(Color.parseColor("#948979"));
+            binding.enduranceGoalButton.setTextColor(Color.parseColor("#FFFFFF"));
+        }
+
+        clickedSkillButton = "";
+        clickedExerciseGoalButton = "";
+
+        binding.calculatedTimeTextView.setText("____ seconds");
+
+        getInformationFromDisplay();
 
     }
 

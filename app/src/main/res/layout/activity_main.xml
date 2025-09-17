@@ -244,8 +244,18 @@
         app:layout_constraintTop_toBottomOf="@id/exerciseGoalCardView"
         />
 
-
-
+    <Button
+        android:id="@+id/OpenTimerButton"
+        android:layout_width="173dp"
+        android:layout_height="wrap_content"
+        android:text="Open Timer"
+        android:backgroundTint="#DFD0B8"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/footerTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculatedTimeTextView"
+        app:layout_constraintVertical_bias="0.16" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

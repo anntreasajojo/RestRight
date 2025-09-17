@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DFD0B8"
+    android:padding="16dp"
+    tools:context=".TimerActivity">
+
+    <TextView
+        android:id="@+id/CountDownTimeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00:00"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textSize="56sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="@string/start"
+        android:backgroundTint="#393E46"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:onClick="onClickStart"
+        app:layout_constraintTop_toBottomOf="@id/CountDownTimeView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/stop_button"
+        app:layout_constraintHorizontal_chainStyle="spread" />
+
+    <!-- Stop -->
+    <Button
+        android:id="@+id/stop_button"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="@string/stop"
+        android:backgroundTint="#393E46"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:onClick="onClickStop"
+        app:layout_constraintTop_toTopOf="@id/startButton"
+        app:layout_constraintBottom_toBottomOf="@id/startButton"
+        app:layout_constraintStart_toEndOf="@id/startButton"
+        app:layout_constraintEnd_toStartOf="@id/reset_button" />
+
+    <!-- Reset -->
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="@string/reset"
+        android:backgroundTint="#393E46"
+        android:layout_marginEnd="24dp"
+        android:onClick="onClickReset"
+        app:layout_constraintTop_toTopOf="@id/startButton"
+        app:layout_constraintBottom_toBottomOf="@id/startButton"
+        app:layout_constraintStart_toEndOf="@id/stop_button"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="213dp"
+        android:layout_height="250dp"
+        android:progressBackgroundTint="#222831"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

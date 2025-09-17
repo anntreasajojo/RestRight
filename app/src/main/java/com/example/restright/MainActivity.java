@@ -144,6 +144,10 @@ public class MainActivity extends AppCompatActivity {
         binding.calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                if(clickedSkillButton.isEmpty()){
+//                    Toast toast = Toast.makeText(this, "Must Select Skill Level!", Toast.LENGTH_SHORT);
+//                    toast.show();
+//                }
                 calculateRest(clickedSkillButton, clickedExerciseGoalButton);
             }
         });

@@ -214,7 +214,7 @@
         android:backgroundTint="#948979"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="35dp"
         android:layout_marginEnd="16dp"
         />
 
@@ -227,7 +227,7 @@
         android:textSize="10sp"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="18dp"
         />
 
     <TextView
